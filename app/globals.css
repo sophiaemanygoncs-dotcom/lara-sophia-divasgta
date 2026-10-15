@@ -1,6 +1,8 @@
 :root {
   /* Cores principais: troque aqui quando quiser mudar o visual */
-  --cor-fundo: #f7f2ff;
+  --cor-fundo: body {
+  background: #ffe6f2;
+}
   --cor-card: #ffffff;
   --cor-texto: #241633;
   --cor-destaque: #7c3aed;
