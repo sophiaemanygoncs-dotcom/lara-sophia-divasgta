@@ -3,10 +3,9 @@
 import { useState } from "react";
 
 const TEXTOS = {
-  titulo:<h1>Lara & Sophia 💜</h1>
+  titulo: "Lara & Sophia 💜",
   subtitulo: "Digite um texto abaixo e clique em Analisar."
 };
-
 export default function Home() {
   const [entrada, setEntrada] = useState("");
   const [resposta, setResposta] = useState("");
