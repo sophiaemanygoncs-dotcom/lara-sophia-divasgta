@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const TEXTOS = {
-  titulo:<h1>Lara & Sophia 💜</h1>,
+  titulo:<h1>Lara & Sophia 💜</h1>
   subtitulo: "Digite um texto abaixo e clique em Analisar."
 };
 
