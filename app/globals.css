@@ -1,0 +1,103 @@
+:root {
+  /* Cores principais: troque aqui quando quiser mudar o visual */
+  --cor-fundo: #f7f2ff;
+  --cor-card: #ffffff;
+  --cor-texto: #241633;
+  --cor-destaque: #7c3aed;
+  --cor-destaque-hover: #6d28d9;
+  --cor-borda: #d8c8ee;
+  --cor-resposta: #faf7ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.pagina {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+}
+
+.card {
+  width: min(680px, 100%);
+  background: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 12px 40px rgba(36, 22, 51, 0.08);
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2.4rem, 8vw, 4.8rem);
+  line-height: 1;
+}
+
+.subtitulo {
+  margin: 0 0 24px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.campoTexto {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid var(--cor-borda);
+  border-radius: 12px;
+  padding: 14px;
+  outline: none;
+}
+
+.campoTexto:focus {
+  border-color: var(--cor-destaque);
+}
+
+.botao {
+  margin-top: 14px;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 20px;
+  background: var(--cor-destaque);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: var(--cor-destaque-hover);
+}
+
+.resposta {
+  min-height: 110px;
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px dashed var(--cor-borda);
+  border-radius: 12px;
+  background: var(--cor-resposta);
+  white-space: pre-wrap;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 24px;
+  }
+}
