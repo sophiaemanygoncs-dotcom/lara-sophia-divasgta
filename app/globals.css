@@ -1,8 +1,6 @@
 :root {
   /* Cores principais: troque aqui quando quiser mudar o visual */
-  --cor-fundo: body {
-  background: #ffe6f2;
-}
+  --cor-fundo: #ffe6f2;
   --cor-card: #ffffff;
   --cor-texto: #241633;
   --cor-destaque: #7c3aed;
@@ -28,6 +26,7 @@ body {
 }
 
 button,
+input,
 textarea {
   font: inherit;
 }
@@ -55,6 +54,7 @@ h1 {
 }
 
 .subtitulo {
+  display: block;
   margin: 0 0 24px;
   font-size: 1.1rem;
   line-height: 1.6;
@@ -87,6 +87,20 @@ h1 {
 .botao:hover {
   background: var(--cor-destaque-hover);
 }
+
+.formulario { display: grid; gap: 12px; }
+.formulario label { font-weight: 700; }
+.ajuda { margin: 0; font-size: 0.9rem; }
+.acoes { display: flex; gap: 12px; flex-wrap: wrap; }
+.botao-secundario { background: white; color: var(--cor-destaque); border: 1px solid var(--cor-destaque); }
+.botao-secundario:hover { background: #f1e8ff; }
+.botao:disabled { opacity: 0.6; cursor: wait; }
+.botao:focus-visible { outline: 3px solid var(--cor-texto); outline-offset: 3px; }
+.erro { color: #a51436; overflow-wrap: anywhere; }
+.aviso { color: #285b36; }
+.sessao { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.sessao p { margin: 0; overflow-wrap: anywhere; }
+.sessao .botao { margin-top: 0; }
 
 .resposta {
   min-height: 110px;

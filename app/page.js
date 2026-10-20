@@ -1,40 +1,27 @@
-"use client";
+import { redirect } from "next/navigation";
+import { createClient } from "../lib/supabase/server";
+import Analyzer from "./components/analyzer";
+import SignOutButton from "./components/sign-out-button";
 
-import { useState } from "react";
+export const dynamic = "force-dynamic";
 
-const TEXTOS = {
-  titulo: "Lara & Sophia 💜",
-  subtitulo: "Digite um texto abaixo e clique em Analisar."
-};
-export default function Home() {
-  const [entrada, setEntrada] = useState("");
-  const [resposta, setResposta] = useState("");
+export default async function Home() {
+  const supabase = await createClient();
+  if (!supabase) redirect("/login");
 
-  function analisar() {
-    setResposta(entrada);
-  }
+  // Verifica a identidade no servidor, inclusive no acesso direto à URL.
+  const { data: { user }, error } = await supabase.auth.getUser();
+  if (error || !user) redirect("/login");
 
   return (
     <main className="pagina">
       <section className="card">
-        <h1>{TEXTOS.titulo}</h1>
-        <p className="subtitulo">{TEXTOS.subtitulo}</p>
-
-        <textarea
-          className="campoTexto"
-          value={entrada}
-          onChange={(event) => setEntrada(event.target.value)}
-          placeholder="Escreva aqui..."
-          rows={6}
-        />
-
-        <button className="botao" type="button" onClick={analisar}>
-          Analisar
-        </button>
-
-        <div className="resposta" aria-live="polite">
-          {resposta}
-        </div>
+        <header className="sessao">
+          <p>Conectada como <strong>{user.email}</strong></p>
+          <SignOutButton />
+        </header>
+        <h1>Lara & Sophia 💜</h1>
+        <Analyzer />
       </section>
     </main>
   );
