@@ -5,7 +5,7 @@ import { analisarMensagem } from "../lib/ia.js";
 
 test("modo de teste devolve exemplo sem chave e sem chamada à IA", async () => {
   const resultado = await analisarMensagem({ mensagem: "Reunião de pais amanhã." }, {
-    desafio, fetcher: () => assert.fail("O modo de teste não pode chamar a OpenRouter")
+    desafio: { ...desafio, modoTeste: true }, fetcher: () => assert.fail("O modo de teste não pode chamar a OpenRouter")
   });
   assert.equal(resultado.status, 200);
   assert.match(resultado.texto, /EXEMPLO DE TESTE/);
