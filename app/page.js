@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "../lib/supabase/server";
 import Analyzer from "./components/analyzer";
-import SignOutButton from "./components/sign-out-button";
+import SessionHeader from "./components/session-header";
 import { desafio } from "../desafio";
 
 export const dynamic = "force-dynamic";
@@ -17,10 +17,7 @@ export default async function Home() {
   return (
     <main className="pagina">
       <section className="card">
-        <header className="sessao">
-          <p>Conectada como <strong>{user.email}</strong></p>
-          <SignOutButton />
-        </header>
+        <SessionHeader email={user.email} />
         <h1>{desafio.nome}</h1>
         <p className="subtitulo">{desafio.subtitulo}</p>
         <Analyzer desafio={desafio} />

@@ -18,7 +18,7 @@ export async function proxy(request) {
   });
   // Valida com o Supabase, em vez de confiar no conteúdo local do cookie.
   const { data: { user } } = await supabase.auth.getUser();
-  if (!user && request.nextUrl.pathname === "/") {
+  if (!user && (request.nextUrl.pathname === "/" || request.nextUrl.pathname === "/historico")) {
     const redirect = NextResponse.redirect(new URL("/login", request.url));
     response.cookies.getAll().forEach(cookie => redirect.cookies.set(cookie));
     return redirect;
@@ -26,4 +26,4 @@ export async function proxy(request) {
   return response;
 }
 
-export const config = { matcher: ["/", "/login"] };
+export const config = { matcher: ["/", "/login", "/historico"] };

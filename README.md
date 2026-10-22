@@ -28,8 +28,18 @@ Execute `npm run build`. Para validar o fluxo, crie uma conta de teste, saia, te
 
 `desafio.js` define o título, os campos, o modelo, o prompt e `modoTeste`. A rota autenticada `POST /api/ia` recebe um objeto JSON com os campos, como `{ "mensagem": "texto recebido" }`, e responde com texto simples.
 
-Com `modoTeste: true`, a rota retorna um exemplo fixo sem usar chave ou fazer chamadas à OpenRouter. O exemplo não é uma avaliação real da mensagem enviada. O histórico e a gravação na tabela `respostas` ficam para a etapa C; esta etapa não grava no banco nem altera políticas RLS.
+Com `modoTeste: true`, a rota retorna um exemplo fixo sem usar chave ou fazer chamadas à OpenRouter. O exemplo não é uma avaliação real da mensagem enviada. Análises bem-sucedidas, inclusive exemplos de teste, são salvas no histórico.
 
 Para ativar a IA posteriormente, cadastre `OPENROUTER_API_KEY` somente no servidor (na Vercel ou em `.env.local`) e altere `modoTeste` para `false`. Não use o prefixo `NEXT_PUBLIC_` para essa chave. A rota usa `openrouter/free`, limita a resposta a 900 tokens e trata falhas em português. Publicar e ativar a IA são etapas posteriores à revisão.
 
 Execute `npm test` para validar a configuração de autenticação, modo de teste, montagem do prompt e tratamento de erros da IA sem consumir chamadas reais.
+
+## Dia 2 — Histórico privado
+
+Após uma análise bem-sucedida, `/api/ia` insere `entrada` (todos os campos com seus rótulos) e `resposta` na tabela `respostas`, usando a sessão da pessoa logada. O `user_id` vem do default `auth.uid()` já definido na tabela; nenhum ID enviado pelo navegador é usado. A implementação não cria nem altera a tabela ou políticas RLS.
+
+A página `/historico` exige login e consulta os registros da usuária verificada, com 20 análises por página, da mais recente para a mais antiga. Datas e horas aparecem em português, no fuso de São Paulo. Além do filtro no servidor, as políticas RLS existentes devem continuar protegendo SELECT e INSERT no Supabase, conforme a apostila.
+
+Se a análise funcionar e a gravação falhar, a resposta continua visível com um aviso para copiá-la; a IA não é chamada novamente automaticamente. Falha de leitura do histórico mostra um erro, em vez de fingir que não há registros.
+
+Para validar o banco real após a publicação: faça duas análises com a conta A e confira o histórico; em janela anônima, faça uma análise com a conta B. B deve ver apenas uma análise, e A apenas as duas dela. Depois saia e tente abrir `/historico`: o site deve redirecionar para `/login`. Os testes locais com serviços simulados não comprovam as políticas RLS do projeto real.

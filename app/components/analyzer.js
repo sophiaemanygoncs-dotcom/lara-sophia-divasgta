@@ -7,6 +7,7 @@ export default function Analyzer({ desafio }) {
   const [resposta, setResposta] = useState("");
   const [erro, setErro] = useState("");
   const [analisando, setAnalisando] = useState(false);
+  const [salvo, setSalvo] = useState(false);
   const emAndamento = useRef(false);
 
   async function analisar(event) {
@@ -16,6 +17,7 @@ export default function Analyzer({ desafio }) {
     setAnalisando(true);
     setErro("");
     setResposta("");
+    setSalvo(false);
     try {
       const response = await fetch("/api/ia", {
         method: "POST", headers: { "Content-Type": "application/json" },
@@ -27,6 +29,10 @@ export default function Analyzer({ desafio }) {
           ? texto : "Não foi possível analisar a mensagem. Tente novamente.");
       } else {
         setResposta(texto);
+        setSalvo(response.headers.get("X-Historico-Status") === "salvo");
+        if (response.headers.get("X-Historico-Status") === "erro") {
+          setErro("A análise foi concluída, mas não foi possível salvar no histórico. Copie a resposta para não perdê-la.");
+        }
       }
     } catch {
       setErro("Não foi possível concluir a análise. Verifique sua conexão e tente novamente.");
@@ -52,6 +58,7 @@ export default function Analyzer({ desafio }) {
       <p className="ajuda" style={{ marginTop: 12 }}>{desafio.aviso}</p>
       {desafio.modoTeste && <p className="ajuda">Modo de teste: resposta de exemplo, sem chamada à IA.</p>}
       {erro && <p className="erro" role="alert">{erro}</p>}
+      {salvo && <p className="aviso" role="status">Análise salva no seu histórico.</p>}
       <div className="resposta" aria-live="polite" aria-busy={analisando}>{resposta}</div>
     </form>
   );

@@ -101,6 +101,12 @@ h1 {
 .sessao { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
 .sessao p { margin: 0; overflow-wrap: anywhere; }
 .sessao .botao { margin-top: 0; }
+.sessao .acoes { align-items: center; }
+.link-conta { color: var(--cor-destaque); }
+.item-historico { border-top: 1px solid var(--cor-borda); padding: 20px 0; }
+.item-historico h2 { font-size: 1.15rem; }
+.item-historico h3 { font-size: 1rem; }
+.texto-historico { white-space: pre-wrap; overflow-wrap: anywhere; }
 
 .resposta {
   min-height: 110px;
