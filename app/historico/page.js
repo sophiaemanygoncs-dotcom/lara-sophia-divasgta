@@ -5,7 +5,7 @@ import { carregarHistorico } from "../../lib/historico";
 import SessionHeader from "../components/session-header";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Meu histórico | Isso é golpe?" };
+export const metadata = { title: "Meu histórico | Bloqueia Golpe" };
 
 function formatarData(valor) {
   const data = new Date(valor);

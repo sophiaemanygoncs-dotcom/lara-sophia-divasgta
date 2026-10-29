@@ -9,7 +9,7 @@ const nunito = localFont({
 });
 
 export const metadata = {
-  title: "Isso é golpe? | Lara e Sophia",
+  title: "Bloqueia Golpe | Lara e Sophia",
   description: "Uma ajuda para reconhecer sinais de golpe em mensagens suspeitas."
 };
 
