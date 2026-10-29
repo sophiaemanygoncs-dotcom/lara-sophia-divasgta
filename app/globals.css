@@ -110,6 +110,21 @@ label { display: block; margin-bottom: 10px; font-weight: 700; }
 .botao-secundario { background: white; color: var(--cor-destaque); border-color: var(--cor-destaque); }
 .botao-secundario:hover { background: #f1e8ff; }
 .botao:disabled { opacity: 0.65; cursor: wait; }
+.exemplos { margin-top: 14px; }
+.exemplos-botoes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.botao-exemplo {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--cor-destaque);
+  border-radius: 10px;
+  background: white;
+  color: var(--cor-destaque);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.botao-exemplo:hover { background: #f1e8ff; }
+.botao-exemplo:disabled { opacity: 0.65; cursor: wait; }
 :where(a, button):focus-visible { outline: 3px solid var(--cor-principal); outline-offset: 4px; }
 
 .formulario { display: grid; gap: 10px; }
