@@ -1,0 +1,57 @@
+# Isso é golpe? — Lara e Sophia
+
+Roteiro de apresentação — Dia 3, Do Zero ao Ar, Afesu Veleiros 2026.
+Duração estimada: 3min30 a 4min, incluindo uma demonstração curta. Ensaiem uma vez com cronômetro. A divisão das falas abaixo é uma sugestão: ajustem para o jeito de vocês.
+
+## Slide 1 — O problema (Lara, cerca de 30 segundos)
+
+“Oi, gente! Nós somos Lara e Sophia e nosso site se chama ‘Isso é golpe?’. Muitas mensagens tentam assustar as pessoas com uma cobrança urgente ou um problema que precisa ser resolvido na hora. Isso pode confundir principalmente os mais velhos. Nosso site é uma ajuda para parar, conferir os sinais e pensar antes de clicar.”
+
+## Slide 2 — Por que escolhemos (Sophia, cerca de 25 segundos)
+
+“Escolhemos esse desafio porque pensamos nos mais velhos, que podem cair nesses golpes com facilidade. Com a ajuda da OMNI, tivemos a ideia de criar um site para ajudar essas pessoas a reconhecer mensagens suspeitas. A frase que escolhemos é: ‘Mais calma para conferir. Mais cuidado antes de clicar.’”
+
+## Slide 3 — Demonstração e ferramentas (as duas, cerca de 1min20)
+
+Lara, com o site já aberto e logado:
+“Agora vamos mostrar com uma mensagem inventada. Ela diz que uma encomenda ficou retida e pede pagamento e dados pessoais em duas horas.”
+
+Cole o exemplo abaixo e clique em Analisar mensagem:
+
+AVISO URGENTE: sua encomenda está retida! Pague uma taxa de R$ 4,80 nas próximas 2 horas para evitar a devolução. Informe seu CPF e os dados do cartão pelo link desta mensagem.
+
+Enquanto a resposta carrega, Sophia:
+“O Codex ajudou a escrever o código. O GitHub guarda as versões, e a Vercel coloca o site no ar. O Supabase cuida do login e do histórico, e a OpenRouter dá acesso à inteligência artificial.”
+
+Quando aparecer a resposta, Lara:
+“A resposta traz um veredito, explica os sinais encontrados e orienta o que fazer. A IA pode errar; ela ajuda a conferir, mas não garante que uma mensagem é segura.”
+
+Sophia, abrindo Meu histórico:
+“A análise também fica salva no histórico da conta. Testamos duas contas e cada uma viu apenas as próprias análises.”
+
+## Slide 4 — O que deu errado e o que aprendemos (cerca de 1 minuto)
+
+Lara:
+“A maior dificuldade foi o começo: não fazíamos ideia de por onde começar. Também tivemos problemas para configurar a conexão com o Supabase. Conferimos os nomes e valores das variáveis na Vercel e conseguimos resolver.”
+
+Sophia:
+“Em outro momento, o projeto da Vercel foi apagado sem querer. Mas o código continuava no GitHub. Importamos o projeto novamente e o site voltou ao ar.”
+
+Lara:
+“Eu aprendi a ter paciência para começar e resolver uma etapa de cada vez.”
+
+Sophia:
+“Eu aprendi a ter paciência para olhar o site, conferir o resultado e continuar ajustando.”
+
+As duas:
+“Com a OMNI e as apostilas, conseguimos construir nosso site. Obrigada!”
+
+## Antes de apresentar
+
+- Confiram se cada frase representa o que vocês viveram. Não inventamos uma resposta errada da IA: os problemas relatados foram de configuração e recuperação do projeto.
+- A nova aparência deve ser mostrada só depois de vocês conferirem e publicarem a versão. Até lá, usem o site que já está no ar.
+- Testem o exemplo inventado uma única vez antes da apresentação, usando a conta de teste.
+- Deixem o site aberto e logado, com o exemplo copiado. Não mostrem e-mail, mensagens ou dados reais de outras pessoas.
+- Deixem os slides em outra aba e anotem o endereço: https://lara-sophia-divasgta.vercel.app.
+- Se a IA demorar, continuem explicando. Se falhar, digam que verificariam a configuração e os logs; não inventem uma análise.
+- Cronometrem o ensaio. Se passar de 4 minutos, encurtem a explicação das ferramentas ou contem só um dos problemas.
