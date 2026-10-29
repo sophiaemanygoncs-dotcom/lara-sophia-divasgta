@@ -3,7 +3,7 @@ import { createClient } from "../../lib/supabase/server";
 import { configurationError } from "../../lib/supabase/errors";
 import LoginForm from "./login-form";
 
-export const metadata = { title: "Entrar | Lara & Sophia" };
+export const metadata = { title: "Entrar | Isso é golpe?" };
 export const dynamic = "force-dynamic";
 
 export default async function LoginPage({ searchParams }) {
@@ -16,7 +16,7 @@ export default async function LoginPage({ searchParams }) {
   return (
     <main className="pagina">
       <section className="card">
-        <h1>Lara & Sophia 💜</h1>
+        <h1>Isso é golpe?</h1>
         <p className="subtitulo">Entre ou crie sua conta para continuar.</p>
         <LoginForm configurationError={!supabase ? configurationError : null}
           confirmationError={params.error === "confirmation" ? "Não foi possível confirmar seu e-mail. O link pode ter expirado. Tente entrar ou solicite um novo cadastro." : null} />

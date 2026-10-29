@@ -1,6 +1,6 @@
 export const desafio = {
   nome: "Isso é golpe?",
-  subtitulo: "Cole a mensagem suspeita e descubra em segundos",
+  subtitulo: "Mais calma para conferir. Mais cuidado antes de clicar.",
   botao: "Analisar mensagem",
   campos: [
     { id: "mensagem", rotulo: "Cole aqui a mensagem que você recebeu", linhas: 6 }
